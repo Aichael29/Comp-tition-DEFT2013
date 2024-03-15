@@ -24,41 +24,6 @@ Différents modèles de machine learning ont été évalués pour classer les re
 
 ## Résultats
 
-### Modèle de Base
-
-- **Accuracy**: 0.46
-- **Precision (Plat principal)**: 0.46
-- **Recall (Plat principal)**: 1.00
-- **F1-score (Plat principal)**: 0.63
-
-### Naive Bayes
-
-- **Accuracy**: 0.81
-- **Precision moyenne**: 0.81
-- **Recall moyen**: 0.79
-- **F1-score moyen**: 0.79
-
-### Régression Logistique
-
-- **Accuracy**: 0.83
-- **Precision moyenne**: 0.82
-- **Recall moyen**: 0.81
-- **F1-score moyen**: 0.81
-
-### Forêt Aléatoire
-
-- **Accuracy**: 0.78
-- **Precision moyenne**: 0.78
-- **Recall moyen**: 0.74
-- **F1-score moyen**: 0.75
-
-### SVM (Support Vector Machine)
-
-- **Accuracy**: 0.82
-- **Precision moyenne**: 0.81
-- **Recall moyen**: 0.80
-- **F1-score moyen**: 0.81
-
 ### RNN
 
 - **Accuracy**: 0.826
@@ -73,6 +38,17 @@ Différents modèles de machine learning ont été évalués pour classer les re
 - **Recall moyen**: 0.84
 - **F1-score moyen**: 0.85
 - **Précision micro-moyenne**: 0.861
+
+### Analyse des Résultats
+#### Baseline vs Modèle SVM:
+
+La baseline a prédit uniquement la classe majoritaire (Plat principal), aboutissant à une précision de 46%, reflétant la distribution déséquilibrée des classes. Ce résultat était attendu et sert de point de départ pour évaluer l'efficacité d'autres modèles.
+Le modèle SVM, utilisant la vectorisation TF-IDF, a significativement surperformé la baseline avec une précision globale d'environ 86% sur les ensembles de validation et de test. Cela indique une forte capacité à distinguer entre les catégories de recettes.
+#### Performances Détailées
+Dessert: Exceptionnellement bien classé par le modèle SVM, avec presque 98% de précision sur l'ensemble de test, indiquant une excellente identification des caractéristiques spécifiques des desserts.
+Entrée et Plat principal: Performances solides mais légèrement inférieures à celle des desserts, avec une précision d'environ 75-84%. Cela peut suggérer une plus grande difficulté à différencier ces catégories, possiblement à cause de chevauchements dans le vocabulaire utilisé.
+#### Implications
+La performance élevée du modèle SVM montre l'efficacité de la vectorisation TF-IDF pour transformer le texte en caractéristiques utiles à la classification, et le potentiel du SVM pour traiter ces caractéristiques. Cela démontre aussi l'importance de choisir des méthodes de prétraitement et des modèles adaptés à la nature des données et à la tâche spécifique.
 
 ## Conclusion
 
